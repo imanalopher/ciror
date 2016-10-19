@@ -13,6 +13,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'omniauth'
 gem 'omniauth-github'
+
+gem 'materialize-sass'
+
 group :development, :test do
   gem 'byebug'
 end

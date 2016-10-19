@@ -1,0 +1,27 @@
+<% if current_user %>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+      <li class="divider"></li>
+      <li><%= link_to t('session.sign_out'), sign_out_path %></li>
+    </ul>
+<% end %>
+<nav>
+  <div class="nav-wrapper">
+    <!--<a href="#" class="brand-logo" style="padding-left: 8px">CIRoR</a>-->
+    <%= link_to 'CIRoR', root_path, class: 'brand-logo' %>
+    <ul class="right hide-on-med-and-down">
+      <% unless current_user %>
+          <li><%= link_to t('session.sign_in_with_github'), '/auth/github' %></li>
+      <% end %>
+
+      <% if current_user %>
+          <li><%= link_to current_user.name, root_path %></li>
+          <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+<%= javascript_tag do %>
+    $(".dropdown-button").dropdown();
+<% end %>
