@@ -1,5 +1,14 @@
 <% if current_user %>
-  <h1>Yes</h1>
+  <h1>Yes</h1><br>
+  <h1>Logged: <% current_user.name %></h1><br>
+  Date: <%= current_user.created_at.strftime("%d/%m/%y: %H:%M:%S %Z") %><br>
 <% else %>
     <h1>No</h1>
 <% end %>
+
+<h2>User List</h2>
+<% @users.each do |user| -%>
+    <p>
+      <%= user.name %> registered from <%= user.provider %>
+    </p>
+<% end -%>

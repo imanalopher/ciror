@@ -24,3 +24,4 @@ en:
 
   session:
     sign_in_with_github: Sign in with GitHub
+    sign_out: Sign Out
