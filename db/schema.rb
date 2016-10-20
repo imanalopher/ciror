@@ -11,14 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018210915) do
+ActiveRecord::Schema.define(version: 20161020082600) do
 
   create_table "users", force: :cascade do |t|
-    t.string   "provider",   limit: 255
-    t.string   "uid",        limit: 255
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "provider",     limit: 255
+    t.string   "uid",          limit: 255
+    t.string   "name",         limit: 255
+    t.string   "login",        limit: 255
+    t.string   "avatar_id",    limit: 255
+    t.string   "url",          limit: 255
+    t.string   "html_url",     limit: 255
+    t.string   "repos_url",    limit: 255
+    t.boolean  "site_admin"
+    t.string   "company",      limit: 255
+    t.string   "blog",         limit: 255
+    t.string   "email",        limit: 255
+    t.string   "bio",          limit: 255
+    t.integer  "public_repos", limit: 4
+    t.integer  "public_gists", limit: 4
+    t.integer  "followers",    limit: 4
+    t.integer  "following",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end

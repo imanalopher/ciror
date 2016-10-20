@@ -3,6 +3,7 @@
 <% @users.each do |user| -%>
     <div class="section">
       <h5>Username: <%= user.name %></h5>
+      <h5>Login: <%= user.login %></h5>
       <p>registered from <%= user.provider %></p>
       Date: <%= user.created_at.strftime("%d/%m/%y: %H:%M:%S %Z") %><br>
     </div>
